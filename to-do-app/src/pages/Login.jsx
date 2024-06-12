@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ handleLogin }) {
   const [username, setUsername] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulando inicio de sesión exitoso
-    localStorage.setItem('username', username);
+    handleLogin(username);
     navigate('/home');
   };
 
@@ -18,16 +18,25 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          id="username"
+          name="username"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          className="input"  // Usa la clase de estilo global para el input
+          className="input"
+          autoComplete="username" // Añadido el atributo autoComplete
         />
-        <button type="submit" className="button">Login</button>
+        <button type="submit" className="button">
+          Login
+        </button>
       </form>
     </div>
   );
 }
+
+Login.propTypes = {
+  handleLogin: PropTypes.func.isRequired,
+};
 
 export default Login;

@@ -1,0 +1,35 @@
+.diary-container {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.diary-dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.diary-dates button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.diary-dates button.selected {
+  background-color: #777;
+}
+
+.diary-content {
+  flex: 1;
+}
+
+.diary-content p {
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
