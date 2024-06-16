@@ -14,7 +14,7 @@ function Login({ handleLogin }) {
 
   return (
     <div className="container">
-      <h2 className="welcome">Login</h2>
+      <h2 className="welcome">Mi Lista de Tareas</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
